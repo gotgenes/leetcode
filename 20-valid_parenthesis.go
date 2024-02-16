@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 func isValid(s string) bool {
 	pairs := make([]rune, 0)
