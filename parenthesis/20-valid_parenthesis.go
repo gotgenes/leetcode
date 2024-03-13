@@ -1,4 +1,4 @@
-package main
+package parenthesis
 
 func isValid(s string) bool {
 	pairs := make([]rune, 0)
@@ -23,8 +23,5 @@ func isValid(s string) bool {
 			pairs = append(pairs, c)
 		}
 	}
-	if len(pairs) > 0 {
-		return false
-	}
-	return true
+	return len(pairs) <= 0
 }

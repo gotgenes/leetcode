@@ -1,3 +1,5 @@
+package lunch
+
 func countStudents(students []int, sandwiches []int) int {
 	for _, sandwich := range sandwiches {
 		for i, studentPref := range students {
@@ -15,11 +17,11 @@ func countStudents(students []int, sandwiches []int) int {
 				}
 				break
 			} else {
-                if i == len(students)-1 {
-                    return len(students)
-                }
-            }
+				if i == len(students)-1 {
+					return len(students)
+				}
+			}
 		}
 	}
-    return 0
+	return 0
 }

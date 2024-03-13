@@ -1,12 +1,9 @@
-package main
+package mergelists
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "github.com/gotgenes/leetcode"
 
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-	var head *ListNode
+func mergeTwoLists(list1 *leetcode.ListNode, list2 *leetcode.ListNode) *leetcode.ListNode {
+	var head *leetcode.ListNode
 
 	if list1 == nil {
 		if list2 != nil {

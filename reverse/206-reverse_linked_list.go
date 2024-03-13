@@ -1,4 +1,6 @@
-package main
+package reverse
+
+import "github.com/gotgenes/leetcode"
 
 /**
  * Definition for singly-linked list.
@@ -7,8 +9,8 @@ package main
  *     Next *ListNode
  * }
  */
-func reverseList(head *ListNode) *ListNode {
-	var prev *ListNode
+func reverseList(head *leetcode.ListNode) *leetcode.ListNode {
+	var prev *leetcode.ListNode
 	current := head
 	for current != nil {
 		next := current.Next
@@ -18,4 +20,3 @@ func reverseList(head *ListNode) *ListNode {
 	}
 	return prev
 }
-
