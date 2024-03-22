@@ -1,19 +1,18 @@
 package sort_test
 
 import (
-	. "github.com/onsi/ginkgo/v2"
-	. "github.com/onsi/gomega"
+	"testing"
 
 	"github.com/gotgenes/leetcode/sort"
+	"github.com/stretchr/testify/assert"
 )
 
-var _ = Describe("MergeSort", func() {
-	It("should handle empty lists", func() {
-		Expect(sort.MergeSort(nil)).To(BeNil())
-		Expect(sort.MergeSort([]int{})).To(Equal([]int{}))
-	})
-	It("should sort elements", func() {
-		Expect(sort.MergeSort([]int{1, 2, 3, 4})).To(Equal([]int{1, 2, 3, 4}))
-		Expect(sort.MergeSort([]int{4, 2, 3, 1})).To(Equal([]int{1, 2, 3, 4}))
-	})
-})
+func TestHandlesEmptyLists(t *testing.T) {
+	assert.Nil(t, sort.MergeSort(nil))
+	assert.Empty(t, sort.MergeSort([]int{}))
+}
+
+func TestSortsElements(t *testing.T) {
+	assert.Equal(t, []int{1, 2, 3, 4}, sort.MergeSort([]int{1, 2, 3, 4}), "already sorted stays sorted")
+	assert.Equal(t, []int{1, 2, 3, 4}, sort.MergeSort([]int{4, 2, 3, 1}), "sorts unsorted")
+}
